@@ -1,0 +1,29 @@
+doctype html
+head
+    script(type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js")
+    script(type="text/javascript" src="/authScript.js")
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(href="/style.css" rel="stylesheet" type="text/css")
+body
+    div(id="header")
+        div(id="head-title") ToDoList App on Node.js/Koa/Mongo/jQyery/Ajax
+    div(id="mask")
+    div(id="registerPage" class="st-prop")
+        form(class="form-signin" action="/register" method="post")
+            h1(class="h3 mb-3 font-weight-normal" style="text-align: center;") Register
+            label(for="registerName" class="sr-only") Name
+            input(type="name" id="registerName" class="form-control" name="name" placeholder="Name" required="") 
+            label(for="registerEmail" class="sr-only") Email address
+            input(type="email" id="registerEmail" class="form-control" name="email" placeholder="Email address" required="" autofocus="")
+            label(for="registerPassword" class="sr-only") Password
+            input(type="password" id="registerPassword" class="form-control" name="password" placeholder="Password" required="")  
+            button(class="btn btn-lg btn-primary btn-block" id="submitBtn" type="submit") Submit
+    form(class="form-signin" action="/login" method="post")
+        h1(class="h3 mb-3 font-weight-normal" style="text-align: center;") Please sign in
+        label(for="inputEmail" class="sr-only") Email address
+        input(type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required="" autofocus="")
+        label(for="inputPassword" class="sr-only") Password
+        input(type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="")  
+        button(class="btn btn-lg btn-primary btn-block" id="loginBtn" type="submit") Sign in
+        span(id="donthaveaccaunt") Don`t have an accaunt?
+        span(id="registerBtn" class="st-prop") Register

@@ -1,0 +1,31 @@
+{
+  "name": "toDoList",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.0.1",
+    "cookie": "^0.3.1",
+    "cookies": "^0.7.3",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-passport": "^4.1.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1",
+    "koa-session-mongoose": "^2.0.5",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.4.8",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.3"
+  }
+}

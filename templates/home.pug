@@ -1,0 +1,64 @@
+doctype html
+
+html
+    head
+        block head
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="/script2.js"></script>
+
+        link(href="/style.css" rel="stylesheet" type="text/css")
+
+
+    body
+        .container
+        block content
+            div(id="header")
+                div(id="head-title") Welcome #{user.name} 
+                div(id="head-auth")
+            input(type="taskName" id="taskName" name="taskName" placeholder="Добавить задачу")
+            button(type="submit" id="taskButton") New task
+            div(id="list-box")
+                each task in tasks
+                    - if (!task.completed) {
+                    - let newElement = makeTask(task)
+                    - let date = newElement.beginDate.toDateString();
+                    div(class="list-item" taskID=newElement.taskID) 
+                        span(class="taskName" taskID=newElement.taskID) #{newElement.taskName}
+                        span(class="taskDate") #{date}
+                    - } else {
+                    - let newElement = makeTask(task)
+                    - let date = newElement.beginDate.toDateString();
+                    div(class="completed-item" taskID=newElement.taskID) 
+                        span(class="taskName" taskID=newElement.taskID) #{newElement.taskName}
+                        span(class="taskDate") #{date}
+                    - }
+            button(id="showCompletedTasks") Показать выполненные задачи
+
+
+
+
+            //-div(id="modalWindowBackGround")
+            //-div(id="modalWindow")
+                input(id="editTaskName" name="editTaskName" type="editTaskName")
+                textarea(rows="5" id="taskDescription")
+                
+                span(id="modalClose") x  //
+            div(id="taskWindow")
+                div(id="showTaskName") Название задачи:
+                    input(id="editTaskName" name="editTaskName" type="editTaskName")
+                    button(type="submit" id="changeTask") изменить Название
+                div(id="showTaskDescription") Описание задачи:
+                    div(id="taskDescriptionBox")
+                        textarea(rows="1" id="taskDescription" placeholder="введите описание задачи")
+                        button(type="submit" id="saveUpdatedTaskBtn") Добавить описание
+                div(id="showBeginDate") дата начала:
+                    span(class="taskDate") #{date}
+                div(id="status") Статус:    
+                    span(id="showStatus")
+                span(id="closeTaskWindow") x
+                button(type="submit" id="deleteTask") удалить задачу
+                button(type="submit" id="makeCompleted") отметить как выполенную
+            
+            
+              
+                
